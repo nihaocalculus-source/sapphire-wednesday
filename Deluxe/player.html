@@ -6,10 +6,14 @@
 const game = new URLSearchParams(location.search).get('game') === 'ruby' ? 'ruby' : 'sapphire';
 window.EJS_player = '#game';
 window.EJS_core = 'gba';
-window.EJS_gameUrl = '/roms/' + game + '.gba';
+// Hosted copies have no ROMs: the hub hands over the player's own file instead.
+// Rewrapped in this frame's File so EmulatorJS's instanceof check passes.
+const parentRom = parent !== window && parent.swRoms ? parent.swRoms[game] : null;
+const ownRom = parentRom ? new File([parentRom], parentRom.name) : null;
+window.EJS_gameUrl = ownRom || 'roms/' + game + '.gba';
 window.EJS_gameName = 'Sapphire Wednesday - Pokemon ' + game;
 window.EJS_gameID = game === 'ruby' ? 1002 : 1001;
-window.EJS_pathtodata = '/emulator/data/';
+window.EJS_pathtodata = 'emulator/data/';
 window.EJS_language = 'en-US';
 window.EJS_disableAutoLang = false;
 window.EJS_color = '#41dbc5';
@@ -32,5 +36,5 @@ window.EJS_onSaveState = () => parent.postMessage({type:'game-saved',game},locat
 window.EJS_onSaveSave = () => parent.postMessage({type:'game-saved',game},location.origin);
 function fail(){ document.getElementById('game').hidden=true;const el=document.getElementById('error');el.hidden=false;el.textContent='The emulator could not load. Close this player and reopen it. If the problem continues, relaunch Sapphire Wednesday using the .command file.'; }
 window.addEventListener('error',event=>{ if(event.message && /EmulatorJS is not defined/.test(event.message)) fail(); });
-const loader = document.createElement('script');loader.src='/emulator/data/loader.js';loader.onerror=fail;document.body.append(loader);
+const loader = document.createElement('script');loader.src='emulator/data/loader.js';loader.onerror=fail;document.body.append(loader);
 </script></body></html>

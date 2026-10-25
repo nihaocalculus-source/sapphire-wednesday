@@ -17,8 +17,10 @@ function confirmAction(title,message,ok='Continue',cancel='Cancel'){
 function resolveConfirmation(value){$('#confirm-modal').close();const resolve=confirmation;confirmation=null;resolve?.(value);}
 $('#confirm-ok').addEventListener('click',()=>resolveConfirmation(true));$('#confirm-cancel').addEventListener('click',()=>resolveConfirmation(false));$('#confirm-modal').addEventListener('cancel',e=>{e.preventDefault();resolveConfirmation(false);});
 let roms={sapphire:false,ruby:false};
-$$('[data-play]').forEach(b=>{b.disabled=true;b.addEventListener('click',()=>{
- const game=b.dataset.play;if(!roms[game])return;
+let hosted=false;const ownRoms=window.swRoms={};
+function pickRom(game){return new Promise(resolve=>{const input=document.createElement('input');input.type='file';input.accept='.gba';input.addEventListener('change',()=>{const file=input.files[0];if(!file)return resolve(null);if(!/\.gba$/i.test(file.name)||file.size>33554432){toast('Choose a Game Boy Advance .gba file.');return resolve(null);}ownRoms[game]=file;$$(`[data-rom-status="${game}"]`).forEach(e=>e.textContent='Loaded · '+file.name);resolve(file);});input.click();});}
+$$('[data-play]').forEach(b=>{b.disabled=true;b.addEventListener('click',async()=>{
+ const game=b.dataset.play;if(hosted&&!ownRoms[game]&&!await pickRom(game))return;if(!roms[game])return;
  launchTrigger=b;activeGame=game;started=false;
  $('#player-title').textContent='Pokémon '+(game==='ruby'?'Ruby':'Sapphire');
  const frame=document.createElement('iframe');frame.src='player.html?game='+game;frame.title=$('#player-title').textContent+' emulator';frame.allow='autoplay; fullscreen; gamepad';frame.allowFullscreen=true;
@@ -35,7 +37,11 @@ async function checkGames(){
  try{const r=await fetch('/api/health');if(!r.ok)throw Error();const health=await r.json();if(health.app!=='sapphire-wednesday-deluxe')throw Error();roms=health.games;
   for(const g of ['sapphire','ruby']){$$(`[data-play="${g}"]`).forEach(b=>b.disabled=!roms[g]);$(`[data-rom-status="${g}"]`).textContent=roms[g]?'Ready to play':'ROM missing';}
   $('#system-status').textContent=roms.ruby&&roms.sapphire?'● ALL SYSTEMS READY':'CARTRIDGE MISSING';
- }catch{$('#system-status').textContent='LAUNCHER NEEDED';$$('[data-rom-status]').forEach(e=>e.textContent='Open the launcher');toast('Double-click Launch Sapphire Wednesday.command to start the local hub.');}
+ }catch{
+  // No local launcher (e.g. GitHub Pages): players bring their own cartridge file.
+  hosted=true;roms={sapphire:true,ruby:true};$$('[data-play]').forEach(b=>b.disabled=false);
+  $('#system-status').textContent='BRING YOUR OWN CARTRIDGE';$$('[data-rom-status]').forEach(e=>e.textContent='Choose your .gba file');
+ }
 }
 checkGames();
 const SAVE_KEY='sapphire-wednesday-story-v1';let story=freshState(),persistent=true;
