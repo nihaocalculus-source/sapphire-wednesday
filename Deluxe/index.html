@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0a1221"><title>Sapphire Wednesday · The Hoenn Club</title><link rel="icon" href="assets/mudkip.png"><link rel="stylesheet" href="style.css"></head>
+<body>
+<!-- HERO: a luminous pixel-art Kyogre floats over an original midnight archipelago. -->
+<a class="skip" href="#main">Skip to content</a>
+<aside class="sidebar">
+ <a class="brand" href="#arcade" aria-label="Sapphire Wednesday home"><span class="gem">◆</span><span>SAPPHIRE<br><b>WEDNESDAY</b></span></a>
+ <div class="side-label">YOUR LITTLE ESCAPE</div>
+ <nav aria-label="Main navigation">
+  <button data-view="arcade" class="nav active" aria-current="page"><span>▦</span> The arcade <i>01</i></button>
+  <button data-view="adventure" class="nav"><span>✦</span> Story mode <i>02</i></button>
+  <button data-view="journal" class="nav"><span>▤</span> Adventure log <i>03</i></button>
+  <button data-view="guide" class="nav"><span>⌘</span> Field guide <i>04</i></button>
+ </nav>
+ <div class="side-note"><span class="pixel-star">✦</span><strong>A little nostalgia.<br>A lot of possibility.</strong><p>Made for Wednesday.<br>At home in Hoenn.</p></div>
+ <div class="side-bottom"><span class="status-dot"></span> LOCAL CLUB / EST. 2026</div>
+</aside>
+<div class="workspace">
+ <header><div class="breadcrumb">THE HOENN CLUB <span>/</span> <b id="crumb">THE ARCADE</b></div><div class="header-right"><span id="system-status" class="status">CHECKING CARTRIDGES</span><button class="avatar" data-view="journal" aria-label="Open Wednesday's adventure log">W</button></div></header>
+ <main id="main" tabindex="-1">
+  <section id="arcade" class="view">
+   <div class="page-heading"><div><p class="eyebrow">WELCOME BACK, WEDNESDAY</p><h1>Your next great escape.</h1></div><span class="edition">DELUXE EDITION <span>✦</span></span></div>
+   <div class="hero-grid">
+    <article class="hero">
+     <div class="hero-copy"><div class="hero-tag"><span class="status-dot"></span> HOENN IS CALLING</div><h2>Same wonder.<br>New adventure.</h2><p>Ocean air. Tall grass. One more battle.<br>Your favorite world is ready when you are.</p><button class="primary" data-play="sapphire">Play Sapphire <span>↗</span></button><div class="hero-small">GAME BOY ADVANCE <span>•</span> OFFLINE READY</div></div>
+     <div class="ocean-art" aria-hidden="true"><div class="moon"></div><div class="orbit one"></div><div class="orbit two"></div><div class="star s1">✦</div><div class="star s2">+</div><div class="star s3">✦</div><svg class="islands" viewBox="0 0 600 400"><path d="M0 300 90 270 150 286 214 244 279 264 330 240 397 274 476 250 600 300V400H0" fill="#0c4260"/><path d="M96 275 147 219 168 220 206 270 252 289 174 308 110 293Z" fill="#1d6e7a"/><path d="m142 227 18-36 21 48-14-8Z" fill="#7ad1b4"/><path d="m397 275 42-77 26 5 51 84-48 22Z" fill="#175b6a"/><path d="m429 220 22-45 23 54-22-9Z" fill="#6fc3a9"/><path d="m0 350 79-24 44 13 111-7 43 24 87-12 59 29 89-35 88 24v38H0" fill="#0a2c43"/><g stroke="#5ac5d6" opacity=".4" stroke-width="2"><path d="M200 325h64m-1 43h34m40-71h43m102 49h67M20 312h29m325 80h80"/></g></svg><img class="legendary" src="assets/kyogre.png" alt=""><span class="art-label">#0382 / KYOGRE<br>THE SEA BASIN POKÉMON</span></div>
+    </article>
+    <article class="companion"><div class="panel-kicker">EVERY LEGEND STARTS SMALL <span>↗</span></div><div class="companion-image"><div class="sprite-halo"></div><img src="assets/mudkip.png" alt="Mudkip"></div><div class="companion-title"><h3>Hey, partner.</h3><span class="type water">WATER</span></div><p>Mudkip. Big heart. Tiny feet.<br>Your story starts in Littleroot.</p><button class="text-button" data-view="adventure">Meet your next adventure <span>→</span></button></article>
+   </div>
+   <div class="section-heading"><h2>Pick your cartridge <span>02</span></h2><span>THE CLASSICS, RIGHT HERE.</span></div>
+   <div class="cartridges">
+    <button class="cartridge sapphire" data-play="sapphire"><div class="cart-art"><img src="assets/kyogre.png" alt=""></div><div class="cart-copy"><span class="eyebrow">THE OCEAN AWAITS</span><h3>Pokémon Sapphire</h3><p>Chase the rain. Find your legend.</p><span class="cart-meta">GBA <span>·</span> <span data-rom-status="sapphire">Checking file</span></span></div><span class="cart-arrow">↗</span></button>
+    <button class="cartridge ruby" data-play="ruby"><div class="cart-art"><img src="assets/groudon.png" alt=""></div><div class="cart-copy"><span class="eyebrow">TURN UP THE HEAT</span><h3>Pokémon Ruby</h3><p>Same Hoenn. A different kind of wild.</p><span class="cart-meta">GBA <span>·</span> <span data-rom-status="ruby">Checking file</span></span></div><span class="cart-arrow">↗</span></button>
+   </div>
+   <div class="bottom-strip"><div><span class="strip-icon">⌘</span><p><strong>Less setup. More adventure.</strong><br>Keyboard, controller, and save-state tools built in.</p></div><button class="text-button" data-view="guide">Get the controls <span>→</span></button></div>
+  </section>
+  <section id="adventure" class="view" hidden>
+   <div class="page-heading"><div><p class="eyebrow">AN ORIGINAL HOENN SIDE STORY</p><h1>The tide after midnight.</h1></div><span class="edition">INTERACTIVE STORY</span></div>
+   <div class="story-layout"><article class="story-card"><div class="story-top"><span id="story-location"></span><span id="story-step"></span></div><div class="story-art"><img src="assets/mudkip.png" alt="Mudkip"><span>✦</span><img src="assets/kyogre.png" alt="Kyogre"></div><p class="eyebrow" id="story-kicker"></p><h2 id="story-title"></h2><p id="story-text" class="story-text"></p><div id="story-feedback" class="story-feedback" role="status"></div><div id="choices"></div></article>
+    <aside class="story-aside"><div class="stats-panel"><p class="eyebrow">WEDNESDAY & MUDKIP</p><h3>Small steps. Real choices.</h3><dl id="story-stats"></dl><p class="save-note" id="story-save-note">Autosaved in this browser.</p><button id="export-story" class="secondary">Export story save ↓</button><label class="secondary import-label">Import story save ↑<input id="import-story" type="file" accept=".json,application/json"></label><button id="reset-story" class="text-button">Start a new story ↺</button></div><div class="story-info"><p>This short, branching fan story has its own rules and progress. It doesn’t read or change your GBA saves.</p><p>Want an open-ended adventure in chat? Use the upgraded engine below.</p><button id="copy-prompt" class="secondary">Copy the deluxe prompt ↗</button><a class="small-link" href="docs/pokemon-engine-deluxe.md" download>Download the prompt</a></div></aside>
+   </div>
+  </section>
+  <section id="journal" class="view" hidden>
+   <div class="page-heading"><div><p class="eyebrow">THE WEDNESDAY CHRONICLES</p><h1>A journey worth keeping.</h1></div><span class="edition">STORY ARCHIVE</span></div>
+   <article class="journal-banner"><div><span class="eyebrow">FROM LITTLEROOT TO THE LEAGUE</span><h2>One trainer. Six friends.<br>A whole lot of heart.</h2><p>A revised telling of your original adventure. This is a fiction archive, not a verified cartridge save.</p><a class="primary" href="docs/adventure-log-deluxe.md" download>Get the deluxe journal ↓</a></div><img src="assets/swampert.png" alt="Swampert"></article>
+   <div class="section-heading"><h2>The Hall of Fame party</h2><span>FROM YOUR ORIGINAL STORY</span></div><div id="party" class="party-grid"></div>
+   <div class="section-heading"><h2>The road through Hoenn</h2><span>13 CHAPTERS</span></div><div id="chapters" class="chapters"></div>
+   <a class="small-link" href="docs/original-adventure-log.md" download>Download the untouched original journal</a>
+  </section>
+  <section id="guide" class="view" hidden>
+   <div class="page-heading"><div><p class="eyebrow">A LITTLE HELP FOR THE ROAD</p><h1>Ready, player Wednesday.</h1></div></div>
+   <div class="guide-grid"><article class="guide-card"><span class="eyebrow">01 / TAKE CONTROL</span><h2>Made for your keyboard.</h2><dl class="controls"><div><dt>Move</dt><dd><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></dd></div><div><dt>A / Confirm</dt><dd><kbd>Z</kbd></dd></div><div><dt>B / Back</dt><dd><kbd>X</kbd></dd></div><div><dt>Start / Menu</dt><dd><kbd>Enter</kbd></dd></div><div><dt>Select</dt><dd><kbd>Shift</kbd></dd></div><div><dt>L / R</dt><dd><kbd>A</kbd> / <kbd>S</kbd></dd></div><div><dt>Quick save / load</dt><dd><kbd>1</kbd> / <kbd>2</kbd></dd></div><div><dt>Fast forward</dt><dd><kbd>F</kbd></dd></div></dl><p>Click inside the game before using keys. Remap controls or connect a gamepad from the emulator’s toolbar.</p></article>
+    <article class="guide-card"><span class="eyebrow">02 / KEEP YOUR PROGRESS</span><h2>Your adventure, saved.</h2><p><strong>Cartridge save:</strong> use the game’s own SAVE menu. Give it a few seconds to finish before closing.</p><p><strong>Save state:</strong> use the emulator toolbar to download a snapshot, then upload it to continue later. Keep a backup outside the browser.</p><p><strong>Same browser, same address:</strong> browser saves belong to <code>127.0.0.1:8743</code>. Switching browsers or clearing site data won’t bring your saves along.</p><p><strong>Story save:</strong> use Export / Import in Story mode. These JSON files are separate from your GBA saves.</p><div class="guide-callout">Loading a state replaces the current game session. Save your current progress first.</div></article>
+    <article class="guide-card"><span class="eyebrow">03 / THE LOCAL LIFE</span><h2>Launch. Play. Repeat.</h2><p>Double-click <strong>Launch Sapphire Wednesday.command</strong>. Keep its Terminal window open while playing.</p><p>Everything the hub needs is bundled: emulator, artwork, fonts, and copies of your two game files. No account or internet connection needed.</p><p>If a game stalls, close its player, reopen it, and click <strong>START GAME</strong>. Try Chrome if another browser has audio or graphics trouble.</p><a class="small-link" href="README.md" download>Download the full quick-start guide</a></article>
+    <article class="guide-card"><span class="eyebrow">04 / YOUR ADVENTURE ENGINE</span><h2>Better stories. Clearer rules.</h2><p>The new chat prompt adds a consistent save format, deliberate choices, bounded autoplay, and a clear distinction between canonical mechanics and story improvisation.</p><p>Copy it into a new chat and say <strong>“Start Wednesday’s Sapphire journey with Mudkip.”</strong></p><a class="secondary" href="docs/pokemon-engine-deluxe.md" download>Download deluxe engine ↓</a><p class="muted">Fan-made local project. Pokémon belongs to its respective owners.</p></article></div>
+  </section>
+  <footer><span>STAY CURIOUS. TAKE THE SCENIC ROUTE.</span><span>SAPPHIRE WEDNESDAY <b>✦</b></span></footer>
+ </main>
+</div>
+<dialog id="player-modal"><div class="player-heading"><div><span class="status-dot"></span><strong id="player-title">Pokémon Sapphire</strong><small>LOCAL PLAY</small></div><button id="close-player" aria-label="Close game player">Close ✕</button></div><div id="player-frame"></div><div class="player-footer"><span><kbd>Z</kbd> A <kbd>X</kbd> B <kbd>Enter</kbd> START <kbd>↑↓←→</kbd> MOVE</span><span>Save in-game or export a state before leaving.</span></div></dialog>
+<dialog id="confirm-modal"><h2 id="confirm-title">Leave the game?</h2><p id="confirm-text"></p><div class="confirm-actions"><button id="confirm-cancel" class="secondary">Keep playing</button><button id="confirm-ok" class="primary">Close player</button></div></dialog>
+<div id="toast" class="toast" role="status"></div>
+<script type="module" src="app.mjs"></script>
+</body></html>

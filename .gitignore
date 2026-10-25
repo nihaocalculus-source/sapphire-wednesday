@@ -1,0 +1,8 @@
+# Game ROMs are copyrighted — never commit them. Drop your own copies into Deluxe/roms/.
+*.gba
+*.gbc
+*.gb
+*.sav
+
+# macOS
+.DS_Store
